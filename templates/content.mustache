@@ -1,0 +1,21 @@
+
+{{#news}}
+<div class="block-news-item position-relative my-3">
+    <div class="mb-3 bg-cover h-200" 
+    style="background-image: url('{{{image}}}');">
+    </div>
+
+    <a href="{{{link}}}" class="h5 stretched-link">{{{title}}}</a>
+    <p class="pt-3">{{{description}}}</p>
+    <p>
+        <span class="btn btn-link text-left">
+        <i class="fa fa-arrow-right mr-2" aria-hidden="true"></i>
+        {{#str}} readabout, block_news {{/str}} {{{title}}}
+        </span>
+    </p>
+
+</div>
+{{/news}}
+
+
+
