@@ -79,6 +79,9 @@ class block_news extends block_base {
                 $template->news[] = $news;
             }
         }
+        
+        // Return if no news.
+        // TODO - what should the block output if no news?
         if (!isset($template->news)) {
             return array();
         }
