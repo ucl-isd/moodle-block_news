@@ -83,34 +83,7 @@ class block_news extends block_base {
             return array();
         }
 
-        return  $template->news;
-        /*
-        // Image.
-            // SHAME - none standard course image.
-            // Here for backwards compatability.
-            $context = \context_course::instance($course->id);
-            $fs = get_file_storage();
-            $filerecord = $fs->get_area_files($context->id, 'block_news', 'block_news_image', '0', null, false);
-            if ($filerecord) {
-                $file = array_shift($filerecord);
-                $url = moodle_url::make_pluginfile_url($file->get_contextid(),
-                $file->get_component(), $file->get_filearea(), $file->get_itemid(), $file->get_filepath(), $file->get_filename());
-                $image = $url->out();
-                $data->courseimage = $image;
-            }
-        */
-        /*
-        foreach ($news as $n) {
-            $template->headline = 'foo';
-            $template->details = 'longer foo';
-            $template->image = 'https://www.ucl.ac.uk/ucl-minds/sites/ucl_minds/files/lunchhourlectures-tile.png';
-            $template->link = 'https://www.ucl.ac.uk/ucl-minds';
-            $template->linktext = 'Read more about foo';
-            $template->news[] = $news; 
-        }
-        */
-        // $template->news[] = $template; 
-        // return  $template->news; 
+        return  $template->news; 
     }
 
     /**
