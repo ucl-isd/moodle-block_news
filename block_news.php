@@ -51,6 +51,8 @@ class block_news extends block_base {
 
         $template = new stdClass();
         $template->news = $this->fetch_news();
+        // TODO - what should the block output if no news?
+        
         
         $this->content->text = $OUTPUT->render_from_template('block_news/content', $template);
 
@@ -81,7 +83,6 @@ class block_news extends block_base {
         }
         
         // Return if no news.
-        // TODO - what should the block output if no news?
         if (!isset($template->news)) {
             return array();
         }

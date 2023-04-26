@@ -1,14 +1,14 @@
-
+<div class="block-news-container row">
 {{#news}}
-<div class="block-news-item position-relative my-3">
-    <div class="mb-3 bg-cover h-200" 
-    style="background-image: url('{{{image}}}');">
+<div class="block-news-item col-md-4 position-relative my-3">
+    <div class="block-news-item-image mb-3" 
+    style="background-image: url('{{{image}}}'); height: 200px; background-size: cover; background-position: top center;">
     </div>
 
     <a href="{{{link}}}" class="h5 stretched-link">{{{title}}}</a>
     <p class="pt-3">{{{description}}}</p>
     <p>
-        <span class="btn btn-link text-left">
+        <span class="text-primary">
         <i class="fa fa-arrow-right mr-2" aria-hidden="true"></i>
         {{#str}} readabout, block_news {{/str}} {{{title}}}
         </span>
@@ -16,6 +16,27 @@
 
 </div>
 {{/news}}
+</div>
 
-
-
+<!-- We use an inline style tag because moodle cannot process @ symbol in css files. -->
+<style>
+.block-news-container {
+    container-type: inline-size;
+    container-name: blocknewscontainer;
+}
+/* Full width news items when in small containers. */
+@container blocknewscontainer (max-width: 500px) {
+    .block-news-item  {
+        border: 10px soild red;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+.block-news-item-image {
+    transition: all .5s ease-in-out;
+}
+.block-news-item:hover .block-news-item-image
+.block-news-item:focus .block-news-item-image {
+    transform: scale(1.04);
+}
+</style>
