@@ -52,8 +52,6 @@ class block_news extends block_base {
         $template = new stdClass();
         $template->news = $this->fetch_news();
         // TODO - what should the block output if no news?
-        
-        
         $this->content->text = $OUTPUT->render_from_template('block_news/content', $template);
 
         return $this->content;
@@ -86,6 +84,9 @@ class block_news extends block_base {
         if (!isset($template->news)) {
             return array();
         }
+        
+        // Set first element as active for carosel version.
+        $template->news[0]->active = true;
 
         return  $template->news; 
     }

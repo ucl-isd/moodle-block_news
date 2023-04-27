@@ -28,6 +28,9 @@ if ($hassiteconfig) {
     if ($ADMIN->fulltree) {
         $default = '';
 
+        // TODO - Make this easier to use.
+        // e.g. not having to move data down, just add a new item ?
+
         // Add 3 slots for news.
         for ($i = 1 ; $i < 4; $i++) {
             

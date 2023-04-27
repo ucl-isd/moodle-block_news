@@ -23,6 +23,8 @@
  */
 
 $string['pluginname'] = 'News';
+$string['news:addinstance'] = 'Add News block';
+$string['news:myaddinstance'] = 'Add News block';
 
 $string['newslink'] = 'News link';
 $string['title'] = 'Title';

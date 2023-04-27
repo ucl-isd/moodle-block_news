@@ -1,42 +1,76 @@
-<div class="block-news-container row">
+<div id="block-news-container">
+<!-- Grid version. -->
+<div id="block-news-row" class="row">
 {{#news}}
-<div class="block-news-item col-md-4 position-relative my-3">
-    <div class="block-news-item-image mb-3" 
-    style="background-image: url('{{{image}}}'); height: 200px; background-size: cover; background-position: top center;">
+    <div class="col-4">
+        {{> block_news/newsitem }}
     </div>
-
-    <a href="{{{link}}}" class="h5 stretched-link">{{{title}}}</a>
-    <p class="pt-3">{{{description}}}</p>
-    <p>
-        <span class="text-primary">
-        <i class="fa fa-arrow-right mr-2" aria-hidden="true"></i>
-        {{#str}} readabout, block_news {{/str}} {{{title}}}
-        </span>
-    </p>
-
-</div>
 {{/news}}
 </div>
 
+<!-- Carosel version. -->
+<div id="block-news-carousel" class="carousel slide mx-4" data-ride="carousel">
+  
+    <a href="#block-news-carousel" role="button" data-slide="next" 
+    class="btn btn-outline-dark btn-carousel" 
+    style="position: absolute; top: 90px; right: -1rem; z-index:999">
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        <span class="sr-only">Next</span>
+    </a>
+
+    <a href="#block-news-carousel" role="button" data-slide="prev" 
+    class="btn btn-outline-dark btn-carousel" 
+    style="position: absolute; top: 90px; left: -1rem; z-index:999">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        <span class="sr-only">Previous</span>
+    </a>
+  
+    <div class="carousel-inner">
+    {{#news}}
+        <div class="carousel-item {{#active}} active {{/active}}">
+        {{> block_news/newsitem }}
+        </div>
+    {{/news}}
+    </div>
+
+</div>
+</div>
 <!-- We use an inline style tag because moodle cannot process @ symbol in css files. -->
 <style>
-.block-news-container {
+.btn-carousel {
+    background-color: white;
+}
+
+.carousel-item .block-news-item {
+    transition: all .5s ease-in-out;
+    transform: scale(.9);
+}
+
+.carousel-item.active .block-news-item {
+    transform: scale(1);
+}
+
+/* Swap display between carosel and grid. */
+#block-news-container {
     container-type: inline-size;
     container-name: blocknewscontainer;
 }
-/* Full width news items when in small containers. */
-@container blocknewscontainer (max-width: 500px) {
-    .block-news-item  {
-        border: 10px soild red;
-        flex-basis: 100%;
-        max-width: 100%;
+
+@container blocknewscontainer (max-width: 768px) {
+    #block-news-row  {
+        display: none;
+    }
+    #block-news-carousel {
+        display: block;
     }
 }
-.block-news-item-image {
-    transition: all .5s ease-in-out;
+@container blocknewscontainer (min-width: 768px) {
+    #block-news-row  {
+        display: flex;
+    }
+    #block-news-carousel {
+        display: none;
+    }
 }
-.block-news-item:hover .block-news-item-image
-.block-news-item:focus .block-news-item-image {
-    transform: scale(1.04);
-}
+
 </style>
