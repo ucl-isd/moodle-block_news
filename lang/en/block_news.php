@@ -18,7 +18,7 @@
  * Languages configuration for the block_news plugin.
  *
  * @package   block_news
- * @copyright 2023 Stuart Lamour
+ * @author    2023 Stuart Lamour
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -26,12 +26,13 @@ $string['pluginname'] = 'News';
 $string['news:addinstance'] = 'Add News block';
 $string['news:myaddinstance'] = 'Add News block';
 
-$string['newslink'] = 'News link';
+$string['blocktitle'] = 'News block title';
+$string['configurenews'] = "Edit news items";
+$string['newsitem'] = 'News item';
 $string['title'] = 'Title';
+$string['date'] = 'Date';
 $string['image'] = 'Image';
 $string['image_help'] = 'Images of 200px height and 325px width work best. Images will vary in size to fit different screen sizes.';
 $string['description'] = 'Description';
 $string['description_help'] = 'Short text, no more that 140 characters.';
 $string['link'] = 'Link (href)';
-
-$string['readabout'] = 'Read about';
