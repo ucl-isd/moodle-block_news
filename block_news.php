@@ -18,7 +18,7 @@
  * Block definition class for the block_news plugin.
  *
  * @package   block_news
- * @copyright 2023 Stuart Lamour
+ * @author    2023 Stuart Lamour
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -32,6 +32,14 @@ class block_news extends block_base {
     public function init() {
         global $USER;
         $this->title = get_string('pluginname', 'block_news');
+    }
+
+    function specialization() {
+        if (isset($this->config->title)) {
+            $this->title = $this->title = format_string($this->config->title, true, ['context' => $this->context]);
+        } else {
+            $this->title = get_string('pluginname', 'block_news');
+        }
     }
 
     /**
@@ -66,23 +74,39 @@ class block_news extends block_base {
         // Template data for mustache.
         $template = new stdClass();
         
-        // Check 3 slots for news.
+        // Get new items.
         for ($i = 1 ; $i < 4; $i++) {
             $news = new stdClass();
             $news->title = get_config('block_news', 'title'.$i);
             $news->description = get_config('block_news', 'description'.$i);
             $news->link = get_config('block_news', 'link'.$i);
             $news->image = get_config('block_news', 'image'.$i);
-
+            $news->date = get_config('block_news', 'date'.$i);
+            
             // Check news is populated.
-            if ($news->title) {
-                $template->news[] = $news;
+            if ($news->title && $news->link) {
+                // Format the date for display.
+                if($news->date) {
+                    $news->displaydate = date_format(date_create($news->date),"jS M Y");
+                }              
+                // Make a temp key value array to sort.
+                // NOTE - index added to make keys unique.
+                $template->tempnews[$news->date.'-'.$i] = $news;
+                
             }
         }
-        
+
         // Return if no news.
-        if (!isset($template->news)) {
+        if (!isset($template->tempnews)) {
             return array();
+        }
+
+        // Sort news items by date for output.
+        krsort($template->tempnews);
+
+        // Add sorted array to template.
+        foreach ($template->tempnews as $news) {
+            $template->news[] = $news;
         }
         
         // Set first element as active for carosel version.

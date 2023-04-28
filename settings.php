@@ -24,22 +24,31 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+use block_news\admin_setting_date;
+
 if ($hassiteconfig) {
     if ($ADMIN->fulltree) {
-        $default = '';
 
-        // TODO - Make this easier to use.
-        // e.g. not having to move data down, just add a new item ?
+        $default = '';
 
         // Add 3 slots for news.
         for ($i = 1 ; $i < 4; $i++) {
-            
+            // Heading.
             $setting = new admin_setting_heading('h'.$i,
-                get_string('newslink', 'block_news'). ' '.$i,
+                get_string('newsitem', 'block_news'),
                 ''
             );
             $settings->add($setting);
 
+            // Date.
+            $setting = new admin_setting_date('block_news/date'.$i,
+                get_string('date', 'block_news'),
+                '', 
+                $default
+            );
+            $settings->add($setting);
+
+            // Title.
             $setting = new admin_setting_configtext('block_news/title'.$i,
                 get_string('title', 'block_news'),
                 '', 
@@ -48,6 +57,7 @@ if ($hassiteconfig) {
             );
             $settings->add($setting);
 
+            // Image.
             $setting = new admin_setting_configtext('block_news/image'.$i, 
                 get_string('image', 'block_news'), 
                 get_string('image_help', 'block_news'),
@@ -56,6 +66,7 @@ if ($hassiteconfig) {
             );
             $settings->add($setting);
 
+            // Description.
             $setting = new admin_setting_configtext('block_news/description'.$i,
                 get_string('description', 'block_news'),
                 get_string('description_help', 'block_news'),
@@ -64,6 +75,7 @@ if ($hassiteconfig) {
             );
             $settings->add($setting);
 
+            // Link.
             $setting = new admin_setting_configtext('block_news/link'.$i,
                 get_string('link', 'block_news'),
                 '', 
@@ -72,6 +84,5 @@ if ($hassiteconfig) {
             );
             $settings->add($setting);
         }
-
     }
 }

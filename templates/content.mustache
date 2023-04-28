@@ -35,20 +35,9 @@
 
 </div>
 </div>
+
 <!-- We use an inline style tag because moodle cannot process @ symbol in css files. -->
 <style>
-.btn-carousel {
-    background-color: white;
-}
-
-.carousel-item .block-news-item {
-    transition: all .5s ease-in-out;
-    transform: scale(.9);
-}
-
-.carousel-item.active .block-news-item {
-    transform: scale(1);
-}
 
 /* Swap display between carosel and grid. */
 #block-news-container {
@@ -71,6 +60,19 @@
     #block-news-carousel {
         display: none;
     }
+}
+
+.btn-carousel {
+    background-color: white;
+}
+
+.carousel-item .block-news-item {
+    transition: all .5s ease-in-out;
+    transform: scale(.9);
+}
+
+.carousel-item.active .block-news-item {
+    transform: scale(1);
 }
 
 </style>
