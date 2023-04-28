@@ -35,7 +35,7 @@ class block_news_edit_form extends block_edit_form {
 
         // Link to config.
         $href = new moodle_url('/admin/settings.php?section=blocksettingnews');
-        $text = get_string('configurenews', 'block_news')
+        $text = get_string('configurenews', 'block_news');
         $mform->addElement('html', '<p><a href="'.$href.'" >'.$text.'</a></p>');
         
         // TODO - Carousel or grid layout option?

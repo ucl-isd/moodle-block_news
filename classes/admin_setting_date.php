@@ -40,8 +40,12 @@ class admin_setting_date extends \admin_setting_configtext {
         $default = $this->get_defaultsetting();
         return format_admin_setting($this, $this->visiblename,
                     '<div class="form-text defaultsnext">
-                    <input type="date" id="'.$this->get_id().'" name="'.$this->get_full_name().
-                    '" value="'.s($data).'" /></div>',
+                    <input type="date" 
+                    id="'.$this->get_id().'"
+                    class="form-control"
+                    size="10"
+                    name="'.$this->get_full_name().'" 
+                    value="'.s($data).'" /></div>',
                     $this->description, true, '', $default, $query);
     }
 }
