@@ -27,7 +27,7 @@ $string['news:addinstance'] = 'Add News block';
 $string['news:myaddinstance'] = 'Add News block';
 
 $string['blocktitle'] = 'News block title';
-$string['configurenews'] = "Edit news items";
+$string['configurenews'] = "Edit global news items";
 $string['newsitem'] = 'News item';
 $string['title'] = 'Title';
 $string['date'] = 'Date';
