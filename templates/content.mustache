@@ -11,18 +11,18 @@
 <!-- Carosel version. -->
 <div id="block-news-carousel" class="carousel slide mx-4" data-ride="carousel">
   
-    <a href="#block-news-carousel" role="button" data-slide="next" 
+    <a href="#block-news-carousel" role="button" data-slide="next"
     class="btn btn-outline-dark btn-carousel" 
     style="position: absolute; top: 90px; right: -1rem; z-index:999">
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <span class="sr-only">Next</span>
+        <span class="sr-only">{{#str}} next {{/str}}</span>
     </a>
 
     <a href="#block-news-carousel" role="button" data-slide="prev" 
     class="btn btn-outline-dark btn-carousel" 
     style="position: absolute; top: 90px; left: -1rem; z-index:999">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        <span class="sr-only">Previous</span>
+        <span class="sr-only">{{#str}} previous {{/str}}</span>
     </a>
   
     <div class="carousel-inner">
@@ -38,6 +38,7 @@
 
 <!-- We use an inline style tag because moodle cannot process @ symbol in css files. -->
 <style>
+
 
 /* Swap display between carosel and grid. */
 #block-news-container {
