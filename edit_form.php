@@ -41,7 +41,5 @@ class block_news_edit_form extends block_edit_form {
         // TODO - Carousel or grid layout option?
     }
 
-    public function set_data($defaults) {
-        parent::set_data($defaults);
-    }
 }
+

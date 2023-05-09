@@ -69,7 +69,7 @@ class block_news extends block_base {
         return $this->content;
     }
 
-     /**
+    /**
      *  Get the news.
      *
      * @return array news items.
@@ -91,7 +91,7 @@ class block_news extends block_base {
             if ($news->title && $news->link) {
                 // Format the date for display.
                 if ($news->date) {
-                    $news->displaydate = date_format(date_create($news->date),"jS M Y");
+                    $news->displaydate = date_format(date_create($news->date), "jS M Y");
                 }
                 // Make a temp key value array to sort.
                 // NOTE - index added to make keys unique.
@@ -142,3 +142,4 @@ class block_news extends block_base {
         return true;
     }
 }
+
