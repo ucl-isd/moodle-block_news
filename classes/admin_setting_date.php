@@ -41,11 +41,11 @@ class admin_setting_date extends \admin_setting_configtext {
     /**
      * Generate the HTML output.
      *
-     * @param string $data - the value.
-     * @param string $query.
-     * @return string
+     * @param array $data An array of checked values
+     * @param string $query
+     * @return string HMTL field
      */
-    public function output_html($data, $query='') {
+    public function output_html($data, $query='') : string {
         $default = $this->get_defaultsetting();
 
         return format_admin_setting($this, $this->visiblename,

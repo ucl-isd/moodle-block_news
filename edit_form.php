@@ -26,6 +26,7 @@ class block_news_edit_form extends block_edit_form {
     /**
      * Edit form.
      *
+     * @param \MoodleQuickForm $mform the form being built.
      */
     protected function specific_definition($mform) {
 

@@ -48,9 +48,9 @@ class block_news extends block_base {
     /**
      * Gets the block contents.
      *
-     * @return string The block HTML.
+     * @return stdClass - the block content.
      */
-    public function get_content() : string {
+    public function get_content() : stdClass {
         global $OUTPUT;
 
         if ($this->content !== null) {
