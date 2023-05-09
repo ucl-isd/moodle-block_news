@@ -41,6 +41,8 @@ class admin_setting_date extends \admin_setting_configtext {
     /**
      * Generate the HTML output.
      *
+     * @param string $data - the value.
+     * @param string $query.
      * @return string
      */
     public function output_html($data, $query='') {

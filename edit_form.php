@@ -21,9 +21,12 @@
  * @author    2023 Stuart Lamour
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 class block_news_edit_form extends block_edit_form {
 
+    /**
+     * Edit form.
+     *
+     */
     protected function specific_definition($mform) {
 
         // Fieldset.

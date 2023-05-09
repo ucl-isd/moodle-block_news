@@ -21,7 +21,6 @@
  * @author    2023 Stuart Lamour
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 class block_news extends block_base {
 
     /**
@@ -51,7 +50,7 @@ class block_news extends block_base {
      *
      * @return string The block HTML.
      */
-    public function get_content() {
+    public function get_content() : string {
         global $OUTPUT;
 
         if ($this->content !== null) {
@@ -124,7 +123,7 @@ class block_news extends block_base {
      *
      * @return array of the pages where the block can be added.
      */
-    public function applicable_formats() {
+    public function applicable_formats() : array {
         return [
             'admin' => false,
             'site-index' => true,
@@ -134,11 +133,21 @@ class block_news extends block_base {
         ];
     }
 
-    public function instance_allow_multiple() {
+    /**
+     * Defines if the block can be added multiple times.
+     *
+     * @return bool.
+     */
+    public function instance_allow_multiple() : bool {
         return true;
     }
 
-    public function has_config() {
+    /**
+     * Defines if the has config.
+     *
+     * @return bool.
+     */
+    public function has_config() : bool {
         return true;
     }
 }
