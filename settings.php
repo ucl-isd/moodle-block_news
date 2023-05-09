@@ -18,7 +18,7 @@
  * News block settings.
  *
  * @package    block_news
- * @copyright  2023 Stuart Lamour
+ * @author  2023 Stuart Lamour
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -32,7 +32,7 @@ if ($hassiteconfig) {
         $default = '';
 
         // Add 3 slots for news.
-        for ($i = 1 ; $i < 4; $i++) {
+        for ($i = 1; $i < 4; $i++) {
             // Heading.
             $setting = new admin_setting_heading('h'.$i,
                 get_string('newsitem', 'block_news'),
@@ -43,7 +43,7 @@ if ($hassiteconfig) {
             // Date.
             $setting = new admin_setting_date('block_news/date'.$i,
                 get_string('date', 'block_news'),
-                '', 
+                get_string('date_help', 'block_news'),
                 $default
             );
             $settings->add($setting);
@@ -51,15 +51,15 @@ if ($hassiteconfig) {
             // Title.
             $setting = new admin_setting_configtext('block_news/title'.$i,
                 get_string('title', 'block_news'),
-                '', 
-                $default, 
+                '',
+                $default,
                 PARAM_RAW
             );
             $settings->add($setting);
 
             // Image.
-            $setting = new admin_setting_configtext('block_news/image'.$i, 
-                get_string('image', 'block_news'), 
+            $setting = new admin_setting_configtext('block_news/image'.$i,
+                get_string('image', 'block_news'),
                 get_string('image_help', 'block_news'),
                 $default,
                 PARAM_RAW
@@ -70,7 +70,7 @@ if ($hassiteconfig) {
             $setting = new admin_setting_configtext('block_news/description'.$i,
                 get_string('description', 'block_news'),
                 get_string('description_help', 'block_news'),
-                $default, 
+                $default,
                 PARAM_RAW
             );
             $settings->add($setting);
@@ -78,8 +78,8 @@ if ($hassiteconfig) {
             // Link.
             $setting = new admin_setting_configtext('block_news/link'.$i,
                 get_string('link', 'block_news'),
-                '', 
-                $default, 
+                '',
+                $default,
                 PARAM_RAW
             );
             $settings->add($setting);

@@ -28,9 +28,10 @@ $string['news:myaddinstance'] = 'Add News block';
 
 $string['blocktitle'] = 'News block title';
 $string['configurenews'] = "Edit global news items";
-$string['newsitem'] = 'News item';
+$string['newsitem'] = 'News post';
 $string['title'] = 'Title';
-$string['date'] = 'Date';
+$string['date'] = 'Post date';
+$string['date_help'] = 'Post date sets the order of display, not the date it becomes visible.';
 $string['image'] = 'Image';
 $string['image_help'] = 'Images of 200px height and 325px width work best. Images will vary in size to fit different screen sizes.';
 $string['description'] = 'Description';

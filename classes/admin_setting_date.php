@@ -18,11 +18,13 @@ namespace block_news;
 
 /**
  * Class to render input of type url in settings pages.
+ *
  * @package block_news
  * @author 2023 Stuart Lamour
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class admin_setting_date extends \admin_setting_configtext {
+
     /**
      * Config url constructor
      *
@@ -36,15 +38,21 @@ class admin_setting_date extends \admin_setting_configtext {
         parent::__construct($name, $visiblename, $description, $defaultsetting, PARAM_RAW, 50);
     }
 
+    /**
+     * Generate the HTML output.
+     *
+     * @return string
+     */
     public function output_html($data, $query='') {
         $default = $this->get_defaultsetting();
+
         return format_admin_setting($this, $this->visiblename,
                     '<div class="form-text defaultsnext">
-                    <input type="date" 
+                    <input type="date"
                     id="'.$this->get_id().'"
                     class="form-control"
                     size="10"
-                    name="'.$this->get_full_name().'" 
+                    name="'.$this->get_full_name().'"
                     value="'.s($data).'" /></div>',
                     $this->description, true, '', $default, $query);
     }

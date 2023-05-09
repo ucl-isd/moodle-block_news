@@ -34,7 +34,11 @@ class block_news extends block_base {
         $this->title = get_string('pluginname', 'block_news');
     }
 
-    function specialization() {
+    /**
+     * Gets the block settings.
+     *
+     */
+    public function specialization() {
         if (isset($this->config->title)) {
             $this->title = $this->title = format_string($this->config->title, true, ['context' => $this->context]);
         } else {
@@ -67,32 +71,32 @@ class block_news extends block_base {
 
      /**
      *  Get the news.
-     * 
+     *
      * @return array news items.
      */
     public function fetch_news() : array {
         // Template data for mustache.
         $template = new stdClass();
-        
+
         // Get new items.
-        for ($i = 1 ; $i < 4; $i++) {
+        for ($i = 1; $i < 4; $i++) {
             $news = new stdClass();
             $news->title = get_config('block_news', 'title'.$i);
             $news->description = get_config('block_news', 'description'.$i);
             $news->link = get_config('block_news', 'link'.$i);
             $news->image = get_config('block_news', 'image'.$i);
             $news->date = get_config('block_news', 'date'.$i);
-            
+
             // Check news is populated.
             if ($news->title && $news->link) {
                 // Format the date for display.
-                if($news->date) {
+                if ($news->date) {
                     $news->displaydate = date_format(date_create($news->date),"jS M Y");
-                }              
+                }
                 // Make a temp key value array to sort.
                 // NOTE - index added to make keys unique.
                 $template->tempnews[$news->date.'-'.$i] = $news;
-                
+
             }
         }
 
@@ -108,11 +112,11 @@ class block_news extends block_base {
         foreach ($template->tempnews as $news) {
             $template->news[] = $news;
         }
-        
+
         // Set first element as active for carosel version.
         $template->news[0]->active = true;
 
-        return  $template->news; 
+        return  $template->news;
     }
 
     /**
@@ -134,7 +138,7 @@ class block_news extends block_base {
         return true;
     }
 
-    function has_config() {
+    public function has_config() {
         return true;
     }
 }
