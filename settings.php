@@ -17,9 +17,9 @@
 /**
  * News block settings.
  *
- * @package    block_news
- * @author  2023 Stuart Lamour
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   block_news
+ * @copyright 2023 Stuart Lamour
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();

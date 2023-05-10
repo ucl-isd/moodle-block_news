@@ -18,7 +18,7 @@
  * Languages configuration for the block_news plugin.
  *
  * @package   block_news
- * @author    2023 Stuart Lamour
+ * @copyright 2023 Stuart Lamour
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

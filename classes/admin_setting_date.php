@@ -19,8 +19,8 @@ namespace block_news;
 /**
  * Class to render input of type url in settings pages.
  *
- * @package block_news
- * @author 2023 Stuart Lamour
+ * @package   block_news
+ * @copyright 2023 Stuart Lamour
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class admin_setting_date extends \admin_setting_configtext {
