@@ -77,43 +77,43 @@
     </div>
 </div>
 
-{{#mustache-lint-disable-style}}
-<!-- We use an inline style tag because moodle cannot process @ symbol in css files. -->
-<style>
-/* Swap display between carosel and grid. */
-#block-news-container {
-    container-type: inline-size;
-    container-name: blocknewscontainer;
-}
-
-@container blocknewscontainer (max-width: 768px) {
-    #block-news-row  {
-        display: none;
+{{#news}}
+    <!-- We use an inline style tag because moodle cannot process @ symbol in css files. -->
+    <style>
+    /* Swap display between carosel and grid. */
+    #block-news-container {
+        container-type: inline-size;
+        container-name: blocknewscontainer;
     }
-    #block-news-carousel {
-        display: block;
-    }
-}
-@container blocknewscontainer (min-width: 768px) {
-    #block-news-row  {
-        display: flex;
-    }
-    #block-news-carousel {
-        display: none;
-    }
-}
 
-.btn-carousel {
-    background-color: white;
-}
+    @container blocknewscontainer (max-width: 768px) {
+        #block-news-row  {
+            display: none;
+        }
+        #block-news-carousel {
+            display: block;
+        }
+    }
+    @container blocknewscontainer (min-width: 768px) {
+        #block-news-row  {
+            display: flex;
+        }
+        #block-news-carousel {
+            display: none;
+        }
+    }
 
-.carousel-item .block-news-item {
-    transition: all .5s ease-in-out;
-    transform: scale(.9);
-}
+    .btn-carousel {
+        background-color: white;
+    }
 
-.carousel-item.active .block-news-item {
-    transform: scale(1);
-}
-</style>
-{{/mustache-lint-disable-style}}
+    .carousel-item .block-news-item {
+        transition: all .5s ease-in-out;
+        transform: scale(.9);
+    }
+
+    .carousel-item.active .block-news-item {
+        transform: scale(1);
+    }
+    </style>
+{{/news}}
