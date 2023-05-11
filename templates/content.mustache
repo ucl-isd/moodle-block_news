@@ -1,45 +1,84 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+{{!
+    @template blocks_news/content
+
+
+    Example context (json):
+    {
+        "news": [
+         {
+            "image": "https://moodle.com/wp-content/uploads/2022/03/our-community-1.svg",
+            "link": "https://moodle.com/",
+            "title": "News time!",
+            "description": "This is the news description",
+            "active": 1
+         },
+         {
+            "image": "https://moodle.com/wp-content/uploads/2022/03/our-community-1.svg",
+            "link": "https://moodle.com/",
+            "title": "News time!",
+            "description": "This is the news description",
+            "active": 0
+         }
+        ]
+    }
+}}
+
 <div id="block-news-container">
-<!-- Grid version. -->
-<div id="block-news-row" class="row">
-{{#news}}
-    <div class="col-4">
-        {{> block_news/newsitem }}
-    </div>
-{{/news}}
-</div>
-
-<!-- Carosel version. -->
-<div id="block-news-carousel" class="carousel slide mx-4" data-ride="carousel">
-  
-    <a href="#block-news-carousel" role="button" data-slide="next"
-    class="btn btn-outline-dark btn-carousel" 
-    style="position: absolute; top: 90px; right: -1rem; z-index:999">
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <span class="sr-only">{{#str}} next {{/str}}</span>
-    </a>
-
-    <a href="#block-news-carousel" role="button" data-slide="prev" 
-    class="btn btn-outline-dark btn-carousel" 
-    style="position: absolute; top: 90px; left: -1rem; z-index:999">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        <span class="sr-only">{{#str}} previous {{/str}}</span>
-    </a>
-  
-    <div class="carousel-inner">
+    <!-- Grid version. -->
+    <div id="block-news-row" class="row">
     {{#news}}
-        <div class="carousel-item {{#active}} active {{/active}}">
-        {{> block_news/newsitem }}
+        <div class="col-4">
+            {{> block_news/newsitem }}
         </div>
     {{/news}}
     </div>
 
-</div>
+    <!-- Carosel version. -->
+    <div id="block-news-carousel" class="carousel slide mx-4" data-ride="carousel">
+
+        <a href="#block-news-carousel" role="button" data-slide="next"
+        class="btn btn-outline-dark btn-carousel"
+        style="position: absolute; top: 90px; right: -1rem; z-index:999">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            <span class="sr-only">{{#str}} next {{/str}}</span>
+        </a>
+
+        <a href="#block-news-carousel" role="button" data-slide="prev"
+        class="btn btn-outline-dark btn-carousel"
+        style="position: absolute; top: 90px; left: -1rem; z-index:999">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            <span class="sr-only">{{#str}} previous {{/str}}</span>
+        </a>
+
+        <div class="carousel-inner">
+        {{#news}}
+            <div class="carousel-item {{#active}} active {{/active}}">
+            {{> block_news/newsitem }}
+            </div>
+        {{/news}}
+        </div>
+    </div>
 </div>
 
 <!-- We use an inline style tag because moodle cannot process @ symbol in css files. -->
 <style>
-
-
 /* Swap display between carosel and grid. */
 #block-news-container {
     container-type: inline-size;
@@ -75,5 +114,4 @@
 .carousel-item.active .block-news-item {
     transform: scale(1);
 }
-
 </style>

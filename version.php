@@ -17,13 +17,14 @@
 /**
  * Version details
  *
- * @package    block_news
- * @copyright  2023 Stuart Lamour
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   block_news
+ * @copyright 2023 Stuart Lamour
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2023042503;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2019051100;        // Requires this Moodle version
-$plugin->component = 'block_news'; // Full name of the plugin (used for diagnostics)
+$plugin->version   = 2023042503;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->requires  = 2019051100;        // Requires this Moodle version.
+$plugin->component = 'block_news';      // Full name of the plugin (used for diagnostics).
+

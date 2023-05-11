@@ -15,20 +15,24 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Block definition class for the block_news plugin.
+ * News block edit form.
  *
  * @package   block_news
- * @author    2023 Stuart Lamour
+ * @copyright 2023 Stuart Lamour
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 class block_news_edit_form extends block_edit_form {
 
+    /**
+     * Edit form.
+     *
+     * @param \MoodleQuickForm $mform the form being built.
+     */
     protected function specific_definition($mform) {
 
         // Fieldset.
         $mform->addElement('header', 'configheader', get_string('blocksettings', 'block'));
-        
+
         // Block title.
         $mform->addElement('text', 'config_title', get_string('blocktitle', 'block_news'));
         $mform->setType('config_title', PARAM_TEXT);
@@ -37,11 +41,9 @@ class block_news_edit_form extends block_edit_form {
         $href = new moodle_url('/admin/settings.php?section=blocksettingnews');
         $text = get_string('configurenews', 'block_news');
         $mform->addElement('html', '<p><a href="'.$href.'" >'.$text.'</a></p>');
-        
+
         // TODO - Carousel or grid layout option?
     }
 
-    function set_data($defaults) {
-        parent::set_data($defaults);
-    }
 }
+
