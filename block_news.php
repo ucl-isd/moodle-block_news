@@ -69,6 +69,10 @@ class block_news extends block_base {
             return $this->content;
         }
 
+        if ($itemcount > 1) {
+            $template->nav = true;
+        }
+
         // Render from template.
         $this->content->text = $OUTPUT->render_from_template('block_news/content', $template);
 
