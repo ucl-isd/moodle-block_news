@@ -62,7 +62,14 @@ class block_news extends block_base {
 
         $template = new stdClass();
         $template->news = $this->fetch_news();
-        // TODO - what should the block output if no news?
+        $itemcount = count($template->news);
+
+        // Hide block when no content.
+        if (!$itemcount) {
+            return $this->content;
+        }
+
+        // Render from template.
         $this->content->text = $OUTPUT->render_from_template('block_news/content', $template);
 
         return $this->content;
