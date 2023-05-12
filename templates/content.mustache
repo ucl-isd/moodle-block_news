@@ -78,42 +78,42 @@
 </div>
 
 {{#news}}
-    <!-- We use an inline style tag because moodle cannot process @ symbol in css files. -->
-    <style>
-    /* Swap display between carosel and grid. */
-    #block-news-container {
-        container-type: inline-size;
-        container-name: blocknewscontainer;
-    }
+<!-- We use an inline style tag because moodle cannot process @ symbol in css files. -->
+<style>
+/* Swap display between carosel and grid. */
+#block-news-container {
+    container-type: inline-size;
+    container-name: blocknewscontainer;
+}
 
-    @container blocknewscontainer (max-width: 768px) {
-        #block-news-row  {
-            display: none;
-        }
-        #block-news-carousel {
-            display: block;
-        }
+@container blocknewscontainer (max-width: 768px) {
+    #block-news-row  {
+        display: none;
     }
-    @container blocknewscontainer (min-width: 768px) {
-        #block-news-row  {
-            display: flex;
-        }
-        #block-news-carousel {
-            display: none;
-        }
+    #block-news-carousel {
+        display: block;
     }
+}
+@container blocknewscontainer (min-width: 768px) {
+    #block-news-row  {
+        display: flex;
+    }
+    #block-news-carousel {
+        display: none;
+    }
+}
 
-    .btn-carousel {
-        background-color: white;
-    }
+#block-news-container .btn-carousel {
+    background-color: white;
+}
 
-    .carousel-item .block-news-item {
-        transition: all .5s ease-in-out;
-        transform: scale(.9);
-    }
+#block-news-container .carousel-item .block-news-item {
+    transition: all .5s ease-in-out;
+    transform: scale(.9);
+}
 
-    .carousel-item.active .block-news-item {
-        transform: scale(1);
-    }
-    </style>
+#block-news-container .carousel-item.active .block-news-item {
+    transform: scale(1);
+}
+</style>
 {{/news}}

@@ -139,7 +139,7 @@ class block_news extends block_base {
      * @return bool.
      */
     public function instance_allow_multiple() : bool {
-        return true;
+        return false;
     }
 
     /**
