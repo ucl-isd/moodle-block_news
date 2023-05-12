@@ -77,7 +77,7 @@
     </div>
 </div>
 
-{{#mustache-lint-disable-style}}
+{{#news}}
 <!-- We use an inline style tag because moodle cannot process @ symbol in css files. -->
 <style>
 /* Swap display between carosel and grid. */
@@ -103,17 +103,17 @@
     }
 }
 
-.btn-carousel {
+#block-news-container .btn-carousel {
     background-color: white;
 }
 
-.carousel-item .block-news-item {
+#block-news-container .carousel-item .block-news-item {
     transition: all .5s ease-in-out;
     transform: scale(.9);
 }
 
-.carousel-item.active .block-news-item {
+#block-news-container .carousel-item.active .block-news-item {
     transform: scale(1);
 }
 </style>
-{{/mustache-lint-disable-style}}
+{{/news}}
