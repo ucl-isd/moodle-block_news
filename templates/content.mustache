@@ -51,35 +51,36 @@
     </div>
 
     <!-- Carosel version. -->
-    <div id="block-news-carousel" class="carousel slide mx-4" data-ride="carousel">
+    <div id="block-news-carousel" class="carousel slide" data-ride="carousel">
 
         {{#nav}}
             <a href="#block-news-carousel" role="button" data-slide="next"
-            class="btn btn-outline-dark btn-carousel"
+            class="btn btn-outline-dark btn-carousel rounded-circle text-dark"
             style="position: absolute; top: 90px; right: -1rem; z-index:999">
                 <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 <span class="sr-only">{{#str}} next {{/str}}</span>
             </a>
 
             <a href="#block-news-carousel" role="button" data-slide="prev"
-            class="btn btn-outline-dark btn-carousel"
+            class="btn btn-outline-dark btn-carousel rounded-circle text-dark"
             style="position: absolute; top: 90px; left: -1rem; z-index:999">
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 <span class="sr-only">{{#str}} previous {{/str}}</span>
             </a>
         {{/nav}}
 
-        <div class="carousel-inner">
+        <div class="carousel-inner" role="tabpanel">
         {{#news}}
             <div class="carousel-item {{#active}} active {{/active}}">
             {{> block_news/newsitem }}
             </div>
         {{/news}}
         </div>
+
+
     </div>
 </div>
 
-{{#news}}
 <!-- We use an inline style tag because moodle cannot process @ symbol in css files. -->
 <style>
 /* Swap display between carosel and grid. */
@@ -88,7 +89,7 @@
     container-name: blocknewscontainer;
 }
 
-@container blocknewscontainer (max-width: 768px) {
+@container blocknewscontainer (max-width: 700px) {
     #block-news-row  {
         display: none;
     }
@@ -96,7 +97,7 @@
         display: block;
     }
 }
-@container blocknewscontainer (min-width: 768px) {
+@container blocknewscontainer (min-width: 700px) {
     #block-news-row  {
         display: flex;
     }
@@ -118,4 +119,3 @@
     transform: scale(1);
 }
 </style>
-{{/news}}
