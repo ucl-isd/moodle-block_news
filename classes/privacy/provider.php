@@ -24,8 +24,6 @@
 
 namespace block_news\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Privacy Subsystem for block_news implementing null_provider.
  *
