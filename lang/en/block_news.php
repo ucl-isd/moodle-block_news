@@ -25,6 +25,7 @@
 $string['pluginname'] = 'News';
 $string['news:addinstance'] = 'Add News block';
 $string['news:myaddinstance'] = 'Add News block';
+$string['privacy:metadata'] = 'News does not store any personal data.';
 
 $string['blocktitle'] = 'News block title';
 $string['configurenews'] = "Edit global news items";
