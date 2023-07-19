@@ -44,6 +44,4 @@ class block_news_edit_form extends block_edit_form {
 
         // TODO - Carousel or grid layout option?
     }
-
 }
-
