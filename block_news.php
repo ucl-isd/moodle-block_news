@@ -29,19 +29,17 @@ class block_news extends block_base {
      * @return void
      */
     public function init() {
-        global $USER;
         $this->title = get_string('pluginname', 'block_news');
     }
 
     /**
      * Gets the block settings.
      *
+     * @return void
      */
     public function specialization() {
-        if (isset($this->config->title)) {
-            $this->title = $this->title = format_string($this->config->title, true, ['context' => $this->context]);
-        } else {
-            $this->title = get_string('pluginname', 'block_news');
+        if (!empty($this->config->title)) {
+            $this->title = format_string($this->config->title, true, ['context' => $this->context]);
         }
     }
 
@@ -162,4 +160,3 @@ class block_news extends block_base {
         return true;
     }
 }
-

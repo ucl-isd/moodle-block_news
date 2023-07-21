@@ -38,4 +38,3 @@ $string['image_help'] = 'Images of 200px height and 325px width work best. Image
 $string['description'] = 'Description';
 $string['description_help'] = 'Short text, no more that 140 characters.';
 $string['link'] = 'Link (href)';
-
