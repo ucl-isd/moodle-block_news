@@ -94,6 +94,10 @@ class block_news extends block_base {
             $news->link = get_config('block_news', 'link'.$i);
             $news->image = get_config('block_news', 'image'.$i);
             $news->date = get_config('block_news', 'date'.$i);
+            /* TODO -  check if there is an image uploaded for this news item, and if so replace image in the template. */
+            if ($uploadedimage) {
+                $news->image = new moodle_url('foo/imageurl');
+            }
 
             // Check news is populated.
             if ($news->title && $news->link) {

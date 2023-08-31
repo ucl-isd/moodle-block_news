@@ -57,13 +57,21 @@ if ($hassiteconfig) {
             );
             $settings->add($setting);
 
-            // Image.
+            // Image link.
             $setting = new admin_setting_configtext('block_news/image'.$i,
                 get_string('image', 'block_news'),
                 get_string('image_help', 'block_news'),
                 $default,
                 PARAM_RAW
             );
+            $settings->add($setting);
+
+            // Image upload.
+            $setting = new admin_setting_configstoredfile('block_news/upload'.$i,
+            get_string('image', 'block_news'),
+            get_string('image_help', 'block_news'),
+            'block_news');
+            $setting->set_updatedcallback('theme_reset_all_caches');
             $settings->add($setting);
 
             // Description.
