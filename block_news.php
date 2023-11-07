@@ -86,7 +86,11 @@ class block_news extends block_base {
         // Template data for mustache.
         $template = new stdClass();
 
-        // Get new items.
+        // Get news items.
+        $contextid = $this->context->id;
+        $component = "block_news";
+        $filearea = "block_news";
+
         for ($i = 1; $i < 4; $i++) {
             $news = new stdClass();
             $news->title = get_config('block_news', 'title'.$i);
@@ -94,6 +98,14 @@ class block_news extends block_base {
             $news->link = get_config('block_news', 'link'.$i);
             $news->image = get_config('block_news', 'image'.$i);
             $news->date = get_config('block_news', 'date'.$i);
+
+            // Get the Moodle URL for the image file.
+            if (!empty($news->image)) {
+                $itemid = $i;
+                $filename = basename($news->image);
+                $filepath = substr($news->image, 0, -strlen($filename));
+                $news->image = moodle_url::make_pluginfile_url($contextid, $component, $filearea, $itemid, $filepath, $filename);
+            }
 
             // Check news is populated.
             if ($news->title && $news->link) {
@@ -121,7 +133,7 @@ class block_news extends block_base {
             $template->news[] = $news;
         }
 
-        // Set first element as active for carosel version.
+        // Set first element as active for carousel version.
         $template->news[0]->active = true;
 
         return  $template->news;
