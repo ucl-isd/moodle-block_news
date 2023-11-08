@@ -15,12 +15,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Library for news.
+ *
  * @package    block_news
  * @copyright  2023 onwards University College London <m.opitz@ucl.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-defined('MOODLE_INTERNAL') || die();
 
 /**
  * Serve the files from the news file areas.
@@ -59,10 +59,10 @@ function block_news_pluginfile(
     // Extract the filename / filepath from the $args array.
     $filename = array_pop($args); // The last item in the $args array.
     if (empty($args)) {
-        // $args is empty => the path is '/'.
+        // Hint: $args is empty => the path is '/'.
         $filepath = '/';
     } else {
-        // $args contains the remaining elements of the filepath.
+        // Hint: $args contains the remaining elements of the filepath.
         $filepath = '/' . implode('/', $args) . '/';
     }
 

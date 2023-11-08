@@ -122,7 +122,7 @@ class block_news extends block_base {
 
         // Return if no news.
         if (!isset($template->tempnews)) {
-            return array();
+            return [];
         }
 
         // Sort news items by date for output.
