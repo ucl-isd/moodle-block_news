@@ -57,12 +57,13 @@ if ($hassiteconfig) {
             );
             $settings->add($setting);
 
-            // Image.
-            $setting = new admin_setting_configtext('block_news/image'.$i,
+            // Adding a file upload element for an image.
+            $setting = new admin_setting_configstoredfile(
+                'block_news/image'.$i,
                 get_string('image', 'block_news'),
                 get_string('image_help', 'block_news'),
-                $default,
-                PARAM_RAW
+                'block_news',
+                $i
             );
             $settings->add($setting);
 
