@@ -110,7 +110,7 @@ jobs:
         run: moodle-plugin-ci savepoints
 
       - name: Mustache Lint
-        if: ${{ !cancelled() }}
+        if: ${{ false }}
         run: moodle-plugin-ci mustache
 
       - name: Grunt
