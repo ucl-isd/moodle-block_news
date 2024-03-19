@@ -45,7 +45,7 @@ class admin_setting_date extends \admin_setting_configtext {
      * @param string $query
      * @return string HMTL field
      */
-    public function output_html($data, $query='') : string {
+    public function output_html($data, $query=''): string {
         $default = $this->get_defaultsetting();
 
         return format_admin_setting($this, $this->visiblename,

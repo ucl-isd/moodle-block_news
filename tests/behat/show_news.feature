@@ -26,4 +26,3 @@ Feature: Show news
     And I should see "News Title One"
     And I should see "News Title Two"
     And I should see "News Title Three"
-
